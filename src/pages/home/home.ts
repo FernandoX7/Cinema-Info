@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {MovieService} from "./movie-service";
+import * as _ from 'lodash';
+import {StatusBar} from "@ionic-native/status-bar";
 
 @Component({
   selector: 'page-home',
@@ -9,16 +11,27 @@ import {MovieService} from "./movie-service";
 
 export class HomePage implements OnInit {
 
-  constructor(public navCtrl: NavController, private data: MovieService) {
+  movies: any;
+
+  constructor(public navCtrl: NavController, private movieService: MovieService, private statusBar: StatusBar) {
 
   }
 
   ngOnInit() {
-    this.data
+    this.statusBar.backgroundColorByHexString('#babdbe');
+
+    this.movieService
       .getNowPlaying('1')
       .subscribe(
         data => {
-          console.log('data', data);
+          this.movies = data.results;
+          console.log('Now playing movies', this.movies);
+
+          // Add a new 'posterImg' property with the full url of the poster image
+          _.forEach(this.movies, function(movie) {
+            movie.posterImg = 'http://image.tmdb.org/t/p/w185' + movie.poster_path;
+          });
+
         },
         err => console.error('There was an error loading the movies now playing in theatres', err),
         () => console.log('Successfully loaded the movies now playing in theatres')

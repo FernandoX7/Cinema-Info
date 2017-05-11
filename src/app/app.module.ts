@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import {MovieService} from "../pages/home/movie-service";
 import {Constants} from "../pages/Utilities/Constants";
+import { IonicImageLoader } from 'ionic-image-loader';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {Constants} from "../pages/Utilities/Constants";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, { mode: 'md' }),
-    HttpModule
+    HttpModule,
+    IonicImageLoader.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

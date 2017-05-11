@@ -7,8 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  
+  <ion-item *ngFor="let movie of movies">
+    <ion-thumbnail class="thumbnail" item-left>
+      <img-loader src="{{movie.posterImg}}" useImg spinner></img-loader>
+    </ion-thumbnail>
+    <h2>{{movie.original_title}}</h2>
+    <p>May 25, 2017</p>
+  </ion-item>
 
 </ion-content>
