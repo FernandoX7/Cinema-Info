@@ -1,3 +1,38 @@
 page-home {
 
+  .content {
+    background-color: $primary;
+  }
+
+  .thumbnail {
+    margin: 0 16px 0 -16px !important;
+  }
+
+  .movie-title {
+    font-family: 'Roboto';
+    font-size: 18px;
+    margin-bottom: 45px;
+    font-weight: 600;
+    color: #212121;
+  }
+
+  .movie-details {
+    font-family: 'Roboto';
+    font-weight: 500;
+    position: relative;
+    bottom: 40px;
+    font-size: 12px;
+    color: #212121;
+  }
+
+  .list-item {
+    background-color: $primary;
+    border-style: solid !important;
+    border-bottom: thin solid $secondary !important;
+  }
+
+  .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img {
+    height: 120px;
+  }
+
 }
