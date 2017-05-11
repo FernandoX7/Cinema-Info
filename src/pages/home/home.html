@@ -7,14 +7,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="content">
 
-  <ion-item *ngFor="let movie of movies">
+  <div style="margin-bottom: 1px;"></div>
+  <ion-item *ngFor="let movie of movies" class="list-item" no-lines>
     <ion-thumbnail class="thumbnail" item-left>
       <img-loader src="{{movie.posterImg}}" useImg spinner></img-loader>
     </ion-thumbnail>
-    <h2>{{movie.original_title}}</h2>
-    <p>May 25, 2017</p>
+    <div class="movie-title">{{movie.original_title}}</div>
+    <div class="movie-details">{{movie.detailRated}}, {{movie.detailRuntime}}</div>
+    <div class="movie-details">{{movie.detailReleased}}</div>
   </ion-item>
 
 </ion-content>

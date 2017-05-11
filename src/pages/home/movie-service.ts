@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 import {Constants} from "../Utilities/Constants";
@@ -26,6 +26,13 @@ export class MovieService {
     return this.http
       .get('https://api.themoviedb.org/3/movie/upcoming?api_key='  + this.constants.API_KEY +  '&page=' + page + '&region=us')
       .map(res => res.json());
+  }
+
+  getMovieDetails(title: String, year: String) {
+    return this.http
+      .get('http://www.omdbapi.com/?t=' + title + '&y=' + year)
+      .map(res => res.json());
+
   }
 
 }
