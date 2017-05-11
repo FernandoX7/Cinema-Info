@@ -1,8 +1,8 @@
 {
-  "name": "ionic-hello-world",
+  "name": "cinema-info",
   "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Fernando Ramirez",
+  "homepage": "https://github.com/FernandoX7/Cinema-Info",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -50,5 +50,5 @@
       "locator": "ios"
     }
   ],
-  "description": "cinema-info: An Ionic project"
+  "description": "Cinema Info"
 }
