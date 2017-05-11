@@ -8,6 +8,10 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpModule } from '@angular/http';
+import {MovieService} from "../pages/home/movie-service";
+import {Constants} from "../pages/Utilities/Constants";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -16,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, { mode: 'md' }),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,7 +30,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MovieService,
+    Constants
   ]
 })
 export class AppModule {}
